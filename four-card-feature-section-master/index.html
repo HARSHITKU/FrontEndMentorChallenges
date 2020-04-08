@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Four card feature section</title>
+  <style>
+    body{
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1{
+      margin: 0;
+      padding: 0;
+    }
+    h3{
+      color: hsl(234, 12%, 34%);
+    }
+    .attribution { 
+      font-size: 11px;
+      text-align: center;
+      margin-top: 10%;
+    }
+    .attribution a{
+      color: hsl(228, 45%, 44%); 
+    }
+    .main-heading{
+      font-weight: 300;
+      text-align: center;
+      margin-top: 5%;
+      color: hsl(234, 12%, 34%);
+    }
+    .sub-heading{
+      text-align: center;
+      font-size: 2.04em;
+      color: hsl(234, 12%, 34%);
+    }
+    .message-container{
+      width: 40%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1em;
+      color: hsl(229, 6%, 66%);
+    }
+    .card-container{
+      display: flex;
+      justify-content: center;
+    }
+    .column-one, .column-three{
+      width: 30%;
+      margin: 0 auto;
+      align-self: center;
+    }
+    .column-two{
+      width: 30%;
+    }
+    .service-card-container-one{
+      border-radius: 6px;
+      box-shadow:1px 1px 20px lightgrey;
+      border-top: 4px solid hsl(180, 62%, 55%);
+    }
+    .service-card-container-two{
+      border-radius: 6px;
+      box-shadow:1px 1px 20px lightgrey;
+      border-top: 4px solid hsl(0, 78%, 62%);
+      margin-bottom: 8%;
+    }
+    .service-card-container-three{
+      border-radius: 6px;
+      box-shadow:1px 1px 20px lightgrey;
+      border-top: 4px solid hsl(34, 97%, 64%);
+    }
+    .service-card-container-four{
+      border-radius: 6px;
+      box-shadow:1px 1px 20px lightgrey;
+      border-top: 4px solid hsl(212, 86%, 64%);
+    }
+    .service-one, .service-two, .service-three, .service-four{
+      margin: 5%;
+    }
+    .service-message{
+      font-size: 0.8em;
+      color: hsl(229, 6%, 66%);
+    }
+    .image-container{
+      text-align: right;
+    }
+    .image-container img{
+      padding: 5px;
+    }
+
+    @media screen and (max-width: 375px){
+      
+      .main-heading, .sub-heading{
+        font-size: 1.6em;
+      }
+      .message-container{
+        width: 90%;
+      }
+      .card-container{
+        display: block;
+      }
+      .column-one, .column-two, .column-three{
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+   
+  </style>
+</head>
+<body>
+  
+  <h1 class="main-heading">Reliable, efficient delivery</h1>
+  <h2 class="sub-heading">Powered by Technology</h2>
+  <div class="message-container">
+    <p>
+      Our Artificial Intelligence powered tools use millions of project data points 
+      to ensure that your project is successful
+    </p>
+  </div>
+  
+      <div class="card-container">
+        <div class="column-one">
+          <div class="service-card-container-one">
+            <div class="service-one">
+              <h3>Supervisor</h3>
+              <p class="service-message">Monitors activity to identify project roadblocks</p>
+              <div class="image-container"><img src="images/icon-supervisor.svg" alt="Kiwi standing on oval"></div>
+            </div>
+          </div>
+        </div>
+        <div class="column-two">
+          <div class="service-card-container-two">
+            <div class="service-two">
+              <h3 class="services">Team Builder</h3>
+              <p class="service-message">Scans our talent network to create the optimal team for your project</p>
+              <div class="image-container"><img src="images/icon-team-builder.svg" alt="Team Builder"></div>
+            </div>
+          </div>
+          <div class="service-card-container-three">
+            <div class="service-three">
+              <h3 class="services">Karma</h3>
+              <p class="service-message">Regularly evaluates our talent to ensure quality</p>
+              <div class="image-container"><img src="images/icon-karma.svg" alt="Kiwi standing on oval"></div>
+            </div>
+          </div>
+        </div>
+        <div class="column-three">
+          <div class="service-card-container-four">
+            <div class="service-four">
+              <h3 class="services">Calculator</h3>
+              <p class="service-message">Uses data from past projects to provide better delivery estimates</p>
+              <div class="image-container"><img src="images/icon-calculator.svg" alt="Kiwi standing on oval"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+</body>
+</html>
