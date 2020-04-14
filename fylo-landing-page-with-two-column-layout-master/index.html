@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{margin: 0; padding: 0;font-family: 'Open Sans', sans-serif;}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    /* @media only screen and (min-width: 1200px) {*/
+    .main-container{
+      display: flex;
+    }
+    .heading-detail-email-container{
+      width: 50%;
+      margin: 2%; 
+    }
+    .image-container{
+      width: 50%;
+    }
+
+    .picture{
+      padding: 4%;
+    }
+
+    .image-container img{
+      width: 100%;
+    }
+    .header-section{
+      display: flex;
+    }
+    .logo-container{
+      width: 50%;
+      margin: 3%;
+    }
+    .navigation-container{
+      width: 50%;
+      margin: 3%;
+      text-align: right;
+    }
+    .navigation-container a{
+      padding: 10px;
+      text-decoration: none;
+      position: relative;
+      top: 16px;
+      font-size: 1.2em;
+    }
+
+    /*Heading Styles & Image Styles*/
+
+    .heading-container{
+      color: hsl(243, 87%, 12%);
+      font-size: 2.5em;
+      font-weight: 600;
+      font-family: 'Raleway', sans-serif;
+      margin: 5% 5% 0 5%;
+    }
+
+    .detail-container{
+      color: hsl(243, 87%, 12%);
+      font-size: 1.2em;
+      margin: 5%  ;
+    }
+
+    .email-container{
+      margin: 0  5%;
+    }
+
+    input[type="email"]{
+      padding: 3%;
+      width: 50%;
+      border: 1px solid lightgrey;
+      border-radius: 4px;
+    }
+
+    button{
+      padding: 10px;
+      width: 30%;
+      background-color: hsl(224, 93%, 58%); 
+      border: 2px solid hsl(224, 93%, 58%);
+      border-radius: 4px;
+      color: white;
+    }
+
+    /*Prouctive Section*/
+
+    .productive-section{
+      background-image: url(./images/bg-curve-desktop.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 8%;
+    }
+
+    .productive-container{
+      display: flex;
+    }
+
+    .details-container{
+      color: hsl(243, 87%, 12%);
+      padding: 5%;
+      width: 50%; 
+      margin-top: 5%; 
+    }
+
+    .image-lower-container{
+       padding: 5%;
+       width: 50%;
+       margin-top: 5%; 
+    }
+
+    .picture-two img{
+      width: 100%;
+    }
+
+    .heading-productive{
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.3em;
+      font-weight: 600;
+    }
+
+    .detail-productive, .works-productive{
+      font-size: 1.2em;
+    }
+
+    .works-productive span{
+      color: hsl(170, 45%, 43%);
+      border-bottom: 1px solid hsl(170, 45%, 43%);
+    }
+
+    .card-container{
+      width: 60%;
+      border: 1px solid white;
+      box-shadow: 1px 1px 3px lightgrey;
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    .card-details::before{
+      content: "\201C";
+      font-size: 30px;
+    }
+
+    .card-details{
+      margin: 5% 10%;
+    }
+
+    .avatar-intro-container{
+      display: flex;
+    }
+
+    .avatar-image{
+      margin: 10px 10px 14px 28px;
+      width: 15%;
+    }
+
+    .avatar-image img{
+      border-radius: 50%;
+      width: 100%;
+    }
+
+    .name-container{
+      font-weight: 600;
+    }
+
+    .occupation-container{
+      font-size: 0.7em;
+      margin-top: -13px;
+    }
+
+    /*Early Section*/
+
+    .early-access-container{
+      background-color: hsl(238, 22%, 44%);
+      display: flex;  
+    }
+
+    .early-access{
+      color: white;
+      width: 50%;
+      padding: 5%; 
+    }
+
+    .early-heading{
+      font-family: 'Raleway', sans-serif;
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    .early-detail{
+      font-size: 1.1em;
+    }
+
+    .input-container{
+      width: 50%;
+    }
+
+    .email-form{
+      padding: 10%;
+    }
+
+    .email-input{
+    }
+
+    .email-input input[type="email"]{
+      border-radius: 4px;
+      border: 1px solid white;
+      width: 70%;
+      margin: 9% 9% 0 0;
+    }
+
+    .button-start button{
+      color: white;
+      margin-top: 4%;
+      width: 150px;
+    }
+
+    /*Footer Style*/
+
+    #footer-section{
+      background-color: hsl(243, 87%, 12%);
+      color: white;
+    }
+
+    .logo-down-container img{
+      color: white;
+      margin: 5% 5% 0 7%; 
+    }
+
+    .footer-details-container{
+      display: flex;
+      width: 90%;
+      margin: 0 auto; 
+    }
+
+    .social-icons{
+      width: 20%;
+      display: flex;
+      color: white;
+      margin: 3% auto;
+    }
+
+    .icon-border{
+      border: 2px solid white;
+      font-size: 1.3em;
+      border-radius: 50%;
+      padding: 10px;
+      height: 20%;
+      margin: 0 auto;
+    }
+
+    .facebook-icon{
+      padding:0 4px;
+    }
+
+    .instagram-icon{
+      padding: 0 2px;
+    }
+
+    .phone-email-container, .about-container, .contact-container{
+      width: 20%;
+      margin: 3% auto;
+      line-height: 35px;
+    }
+
+    .heading-detail-email-container-two, .details-container-two{
+      display: none;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+      .logo-container{
+        margin: 5%;
+      }
+
+      .logo-container img{
+        width: 50%;
+      }
+
+      .navigation-container{
+        text-align: center;
+      }
+      .navigation-container a{
+        padding: 3px;
+        font-size: 0.9em;
+      }
+
+      .main-container{
+        display: block;
+      }
+
+      .heading-detail-email-container, .details-container{
+        display: none;
+      }
+
+      .heading-detail-email-container-two{
+        display: block;
+      }
+
+      .image-container{
+        width: 100%;
+      }
+
+      .heading-container{
+        text-align: center;
+      }
+
+      .detail-container{
+        text-align: center;
+      }
+
+      .email-container{
+        margin: 0 auto;
+        width: 80%;
+      }
+
+      input[type="email"]{
+        width: 94%;
+      }
+
+      button{
+        width: 100%;
+        margin-top: 5px;
+      }
+
+      .details-container-two{
+        display: block;
+      }
+
+      .productive-container{
+        display: block;
+        padding: 15px;
+      }
+
+      .image-lower-container{
+        width: 100%;
+        margin: 0; 
+        padding: 0;
+      }
+
+      .picture-two{
+        padding: 5%;
+      }
+
+      .heading-productive{
+        text-align: center;
+        font-size: 2em;
+      } 
+
+      .detail-productive, .works-productive{
+        text-align: center;
+        padding: 0 6%;
+      }
+
+      .card-container{
+        margin: 15px  auto 0 auto;
+      }
+
+      .early-access-container{
+        display: block;  
+        padding: 5%;
+      }
+
+      .early-access{
+        width: 100%;
+        padding: 0; 
+      }
+
+      .early-heading{
+        text-align: center;
+        padding: 10px 10px 0 10px;
+      }
+
+      .early-detail{
+       text-align: center;
+       padding: 0 10px;
+       font-size: 1em;
+      }
+
+      .input-container{
+        width: 100%;
+      }
+
+      .email-form{
+        padding: 0;
+      }
+
+      .email-input{
+        margin: 0 auto;
+        width: 80%;
+      }
+
+      .email-input input[type="email"]{
+        width: 93%;
+        margin: 4% 0 2% 0;
+      }
+
+      .button-start{
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .button-start button{
+        color: white;
+        margin-top: 0;
+        width: 99%;
+      }
+
+      .footer-details-container{
+        display: block;
+        width: 90%;
+      }
+
+      .phone-email-container, .about-container, .contact-container{
+        width: 100%;
+        margin: 5%;
+        line-height: 35px;
+      }
+
+      .social-icons{
+        width: 30%;
+        margin: 0 auto;
+      }
+
+      .icon-border{
+        font-size: 0.8em;
+        padding: 5px;
+      }
+
+      #footer-section{
+        padding: 5% 0;
+      }
+    }
+
+    @media only screen and (max-width: 410px) {
+
+      .logo-container{
+        width: 30%;
+      }
+      .logo-container img{
+        width: 100%;
+        padding: 10px;
+      }
+
+      .navigation-container{
+        width: 70%;
+      }
+      .navigation-container a{
+        padding: 1%;
+        font-size: 0.9em;
+      }
+
+      .heading-container{
+        font-size: 1.7em;
+      }
+
+      .detail-container{
+        font-size: 0.9em;
+      }
+
+      input[type="email"]{
+        padding: 4%;
+        width: 90%;
+      }
+
+      .heading-productive{
+        font-size: 1.7em;
+      }
+
+      .detail-productive, .works-productive{
+        font-size: 0.9em;
+      }
+
+      .card-container{
+        width: 85%;
+        font-size: 0.7em;
+      }
+
+      .early-heading{
+        font-size: 1.7em;
+      }
+
+      .early-detail{
+       font-size: 0.9em;
+      }
+
+      .email-input{
+        margin: 0 auto;
+        width: 80%;
+      }
+
+      .email-input input[type="email"]{
+        width: 90%;
+        margin: 4% 0 2% 0;
+      }
+
+      .button-start{
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .button-start button{
+        color: white;
+        margin-top: 0;
+        width: 99%;
+      }
+
+      .footer-details-container{
+        font-size: 0.8em;
+      }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px){
+      .heading-container{
+        font-size: 1.5em;
+      }
+
+      .detail-container{
+        font-size: 0.8em;
+      }
+
+      button{
+        padding: 7px;
+        width: 100px;
+      }
+
+      .picture{
+        padding: 12% 4% 0;
+      }
+
+      .heading-detail-email-container{
+        margin: 5% 2% 2% 2%; 
+      }
+
+      .heading-productive{
+        font-size: 1.5em;
+      }
+
+      .detail-productive, .works-productive{
+        font-size: 0.8em;
+      }
+
+      .card-container{
+        width: 100%;
+        font-size: 0.8em;
+      }
+
+      .card-details{
+        margin: 1% 10%;
+      }
+
+      .image-lower-container{
+        padding: 2%; 
+      }
+
+      .picture-two{
+        padding-top: 40%;
+      }
+
+      .early-heading{
+        font-size: 1.5em;
+      }
+
+      .early-detail{
+        font-size: 0.8em;
+      }
+
+      .email-form{
+        margin: 11% 0;
+      }
+
+      .email-input input[type="email"]{
+        width: 90%;
+        margin: 0;
+      }
+
+      .logo-down-container img{
+        width: 20%;
+      }
+
+      .phone-email-container, .about-container, .contact-container{
+        font-size: 0.8em;
+      }
+
+      .social-icons {
+        font-size: 0.6em;
+      }
+
+      .icon-border {
+        padding: 6px;
+        height: 13%;
+      }
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px){
+      .heading-container{
+        font-size: 2em;
+      }
+
+      .detail-container{
+        font-size: 0.9em;
+      }
+
+      button{
+        padding: 12px;
+      }
+
+      .picture{
+        padding: 16% 4% 4% 4%;
+      }
+
+      .heading-detail-email-container{
+        margin: 5% 2% 2% 2%; 
+      }
+
+      .details-container {
+        margin: 0;
+      }
+
+      .heading-productive{
+        font-size: 2em;
+      }
+
+      .detail-productive, .works-productive{
+        font-size: 0.9em;
+      }
+
+      .card-container{
+        width: 100%;
+        font-size: 0.8em;
+      }
+
+      .card-details{
+        margin: 1% 10%;
+      }
+
+      .image-lower-container{
+        padding: 2%; 
+      }
+
+      .picture-two{
+        padding-top: 25%;
+      }
+
+      .early-heading{
+        font-size: 2em;
+      }
+
+      .early-detail{
+        font-size: 0.9em;
+      }
+
+      .email-form{
+        margin: 11% 0;
+      }
+
+      .email-input input[type="email"]{
+        width: 90%;
+        margin: 0;
+      }
+
+      .logo-down-container img{
+        width: 20%;
+      }
+
+      .phone-email-container, .about-container, .contact-container{
+        font-size: 0.8em;
+      }
+
+      .social-icons {
+        font-size: 0.6em;
+      }
+
+      .icon-border {
+        padding: 6px;
+        height: 13%;
+      }
+    } 
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      .heading-container, .heading-productive, .early-heading{
+        font-size: 2.6em;
+      }
+
+      .detail-container, .detail-productive, .works-productive, .early-detail{
+        font-size: 1.2em;
+      }
+
+      input[type="email"] {
+        padding: 2.6%;
+      }
+
+       button{
+        padding: 15px;
+        width: 125px;
+      }
+
+      .button-start button {
+        width: 160px;
+      }
+
+      .logo-down-container img {
+        width: 15%;
+      }
+
+      .phone-email-container, .about-container, .contact-container {
+        font-size: 1em;
+      }
+
+      .logo-container {
+        margin: 5%;
+      }
+
+      .picture {
+        padding: 10% 4% 4% 4%;
+      }
+
+      .picture-two {
+        padding-top: 13%;
+      }
+
+      .avatar-image {
+        margin: 10px 14px 14px 10%;
+        width: 60px;
+      }
+
+      .card-container {
+        font-size: 1em;
+      }
+    } 
+
+    
+   
+      
+    
+  </style>
+</head>
+<body>
+  <header class="header-section">
+    <div class="logo-container">
+        <img src="images/logo.svg">
+    </div>
+    <nav class="navigation-container">
+      <a href="">Features</a>
+      <a href="">Team</a>
+      <a href="">Sign In</a>
+    </nav>
+  </header>
+  <section>
+    <div class="main-container">
+      <div class="heading-detail-email-container">
+        <div class="heading-container">
+          <p>
+            All your files in one secure location, accessible anywhere.
+          </p>
+        </div>
+        <div class="detail-container">
+          <p>
+            Fylo stores your most important files in one secure location. 
+            Access them wherever you need, share and collaborate with friends, 
+            family, and co-workers.
+          </p>
+        </div>
+        <div class="email-container">
+          <input type="email" name="email" placeholder="Enter your email..">
+          <button>Get Started</button>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="picture">
+          <img src="images/illustration-1.svg">
+        </div>
+      </div>
+      <div class="heading-detail-email-container-two">
+        <div class="heading-container">
+          <p>
+            All your files in one secure location, accessible anywhere.
+          </p>
+        </div>
+        <div class="detail-container">
+          <p>
+            Fylo stores your most important files in one secure location. 
+            Access them wherever you need, share and collaborate with friends, 
+            family, and co-workers.
+          </p>
+        </div>
+        <div class="email-container">
+          <input type="email" name="email" placeholder="Enter your email..">
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>  
+  
+  <section class="productive-section">
+    <div class="productive-container">
+      <div class="details-container">
+        <div class="heading-productive">
+          <p>
+            Stay productive, wherever you are
+          </p>
+        </div>
+        <div class="detail-productive">
+          <p>
+            Never let location be an issue when accessing your files. Fylo has you 
+            covered for all of your file storage needs.
+          </p>
+        </div>
+        <div class="detail-productive">
+          <p>
+            Securely share files and folders with friends, family and colleagues for 
+            live collaboration. No email attachments required!
+          </p>
+        </div>
+        <div class="works-productive">
+          <span>
+            See how Fylo works
+            <span><img src="images/icon-arrow.svg"></span>
+          </span>
+        </div>
+        <div class="card-container">
+          <div class="card-details">
+            <p>
+              Fylo has improved our team productivity by an order of magnitude. Since 
+              making the switch our team has become a well-oiled collaboration machine.
+            </p>
+          </div>
+          <div class="avatar-intro-container">
+            <div class="avatar-image">
+              <img src="images/avatar-testimonial.jpg">
+            </div>
+            <div>
+              <p class="name-container">
+                Kyle Burton
+              </p>
+              <p class="occupation-container">
+                Founder & CEO, Huddle
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image-lower-container">
+        <div class="picture-two">
+          <img src="images/illustration-2.svg">
+        </div>
+      </div>
+      <div class="details-container-two">
+        <div class="heading-productive">
+          <p>
+            Stay productive, wherever you are
+          </p>
+        </div>
+        <div class="detail-productive">
+          <p>
+            Never let location be an issue when accessing your files. Fylo has you 
+            covered for all of your file storage needs.
+          </p>
+        </div>
+        <div class="detail-productive">
+          <p>
+            Securely share files and folders with friends, family and colleagues for 
+            live collaboration. No email attachments required!
+          </p>
+        </div>
+        <div class="works-productive">
+          <span>
+            See how Fylo works
+            <span><img src="images/icon-arrow.svg"></span>
+          </span>
+        </div>
+        <div class="card-container">
+          <div class="card-details">
+            <p>
+              Fylo has improved our team productivity by an order of magnitude. Since 
+              making the switch our team has become a well-oiled collaboration machine.
+            </p>
+          </div>
+          <div class="avatar-intro-container">
+            <div class="avatar-image">
+              <img src="images/avatar-testimonial.jpg">
+            </div>
+            <div>
+              <p class="name-container">
+                Kyle Burton
+              </p>
+              <p class="occupation-container">
+                Founder & CEO, Huddle
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="early-access-container">
+      <div class="early-access">
+        <div class="early-heading">
+          <p>Get early access today</p>
+        </div>
+        <div class="early-detail">
+          It only takes a minute to sign up and our free starter tier is extremely generous. 
+          If you have any questions, our support team would be happy to help you.
+        </div>
+      </div>
+      <div class="input-container">
+        <div class="email-form">
+          <div class="email-input">
+            <input type="email" name="email" placeholder="example@example.com">
+          </div>
+          <div class="button-start">
+            <button>
+              Get Started For Free
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer id="footer-section">
+    <div class="footer-container">
+      <div class="logo-down-container">
+        <img src="images/logo.svg">
+      </div>
+      <div class="footer-details-container">
+          <div class="phone-email-container">
+            <div class="phone-email">
+              <span>
+                <img src="images/icon-phone.svg">
+                <span>Phone: +1-543-123-4567</span>
+              </span>
+            </div>
+            <div>
+              <span>
+                <img src="images/icon-email.svg">
+                <span>example@fylo.com</span>
+              </span>
+            </div>
+          </div>
+          <div class="about-container">
+            <div>About Us</div>
+            <div>Jobs</div>
+            <div>Press</div>
+            <div>Blog</div>
+          </div>
+          <div class="contact-container">
+            <div>Contact Us</div>
+            <div>Terms</div>
+            <div>Privacy</div>
+          </div>
+          <div class="social-icons">
+            <div class="icon-border">
+              <span class="icon-container"><i class="fa fa-facebook facebook-icon" ></i></span>
+            </div>
+            <div class="icon-border">
+              <span class="icon-container"><i class="fa fa-twitter"></i></span>
+            </div>
+            <div class="icon-border">
+              <span class="icon-container"><i class="fa fa-instagram instagram-icon"></i></span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+</body>
+</html>

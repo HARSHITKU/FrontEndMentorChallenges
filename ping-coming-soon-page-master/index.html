@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      font-family: 'Libre Franklin', sans-serif;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .container{
+      width: 50%;
+      margin: 5% auto;
+    }
+    .logo-container{
+      text-align: center;
+    }
+    .heading-container{
+      text-align: center;
+      font-size: 3em;
+      font-weight: 500;
+      color: hsl(0, 0%, 59%);
+    }
+    .soon-text{
+      font-weight: 700;
+      color: black;
+    }
+    .subscribe-message{
+      text-align: center;
+      font-size: 1.5em;
+    }
+    .form-container{
+      margin: 0 auto;
+      width: 90%;
+    }
+    input[type="email"]{
+      padding: 20px;
+      width: 45%;
+      margin-left: 10%;
+      border-radius: 30px;
+      border: 1px solid hsl(223, 100%, 88%);
+    }
+    input[type="submit"]{
+      padding: 20px;
+      width: 25%;
+      margin-left: 3%;
+      border-radius: 30px;
+      color: white;
+      background-color: hsl(223, 87%, 63%);
+      border: 1px solid hsl(223, 87%, 63%);
+    }
+    input:focus{
+      outline: none;
+    }
+    .image-container{
+      margin-top: 10%;
+    }
+    .image-container img{
+      width: 100%;
+    }
+    .social-container{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10%;
+      align-content: space-between;
+    }
+    .copyright-container{
+      font-size: 0.8em;
+      text-align: center;
+      font-weight: 400;
+      color: hsl(0, 0%, 59%);
+      margin-top: 5%;
+    }
+    .icon-container{
+      border: 1px solid lightgrey;
+      cursor: pointer;
+      padding: 2%;
+      margin: 4px; 
+      font-size: 1.1em;
+      color: hsl(223, 87%, 63%);
+      border-radius: 50%;
+    }
+    .icon-container:hover{
+      border: 1px solid hsl(223, 87%, 63%);
+      color: white;
+      background-color: hsl(223, 87%, 63%);
+    }
+    .fa-facebook{
+      padding: 2px;
+    }
+
+    #error{
+      color: red;
+      width: 100%;
+      text-align: center;
+      margin-top: 1%;
+    }
+
+    @media screen and (max-width: 800px){
+      input[type="email"]{
+        margin-left: 5%;
+      }
+
+      input[type="submit"]{
+        margin-left: 2%;
+        font-size:0.6em;
+      }
+
+      .heading-container{
+        font-size: 2em;
+      }
+    }
+
+    @media screen and (max-width: 550px){
+      input[type="email"]{
+        margin-left: 0;
+        width: 90%;
+        padding: 0 0 0 10%;
+        height: 50px; 
+        margin-bottom: 5px;
+      }
+
+      input[type="submit"]{
+        margin-left: 0;
+        width: 100%;
+        margin-top: 5%;
+      }
+      .form-container{
+        width: 100%;
+      }
+      #error{
+        text-align: center;
+        position: relative;
+        top: -71px;
+        width: 100%;
+        font-size: 0.8em;
+      }
+    }
+
+    @media screen and (max-width: 450px){
+      .container{
+        width: 100%;
+      }
+      .logo-container{
+        margin-top: 15%;
+      }
+      .heading-container{
+        font-size: 1.8em;
+      }
+      .subscribe-message{
+        font-size: 1.2em;
+      }
+      input[type="email"]{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 80%;
+      }
+
+      input[type="submit"]{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        margin-top: 2%;
+        font-size: 0.9em;
+      }
+      #error{
+        text-align: center;
+        position: relative;
+        top: -72px;
+        width: 100%;
+        font-size: 0.6em;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="images/logo.svg">
+    </div>
+    <div class="heading-container">
+      <p>We are launching <span class="soon-text">soon!</span></p>
+    </div>
+    <div class="subscribe-message">
+      <p>Subscribe and get notified</p>
+    </div>
+    <div>
+      <div class="form-container">
+        <input type="email" name="email" placeholder="Your email address..." id="emailValue">
+        <input type="submit" name="submit" value="Notify Me" onclick="checkValidation()">
+        <div id="error"></div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="images/illustration-dashboard.png" alt="illustration-image">
+    </div>
+    <div class="social-container">
+      <span class="icon-container"><i class="fa fa-facebook"></i></span>
+      <span class="icon-container"><i class="fa fa-twitter"></i></i></span>
+      <span class="icon-container"><i class="fa fa-instagram"></i></span>
+    </div>
+    <div class="copyright-container">
+      <p>&copy; Copyright Ping. All rights reserved.</p>
+    </div>
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+
+  <script type="text/javascript">
+    function checkValidation() {
+      let emailVal = document.getElementById('emailValue').value;
+      if(emailVal === '' || emailVal === null || emailVal === undefined){
+        document.getElementById('error').innerHTML = "Please provide a valid email";
+      }else{
+        document.getElementById('error').innerHTML = "Thankyou For Subscribing"; 
+        document.getElementById('emailValue').value = ''; 
+      }
+    }
+  </script>
+</body>
+</html>

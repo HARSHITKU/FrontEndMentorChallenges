@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Single Price Grid Component</title>
+  <style>
+    body{font-family: 'Karla', sans-serif;margin:0;padding: 0;}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .container{
+      width: 50%;
+      margin: 5% auto 0 auto;
+      border-radius: 10px;
+      box-shadow:1px 1px 20px lightgrey;
+    }
+    .community-detail-container{
+      border-radius: 10px 10px 0 0;
+      padding: 3%;
+    }
+    .community-heading{
+      color: hsl(179, 62%, 43%);
+      font-size: 1.5em;
+    }
+    .offer-messsage{
+      color: hsl(71, 73%, 54%);
+      font-size: 1.3em;
+      font-weight: 800;
+    }
+    .detail-message{
+      color: hsl(218, 22%, 67%);
+      font-weight: 600;
+    }
+    .subscription-why-container{
+      display: flex;
+    }
+    .subscription-container{
+      border-radius: 0 0 0 10px;
+      width: 50%;
+      background-color: hsl(179, 62%, 43%);
+    }
+    .subscription-details{
+      margin: 10%;
+    }
+    .why-container{
+      background-color: hsl(184, 87%, 45%);
+      border-radius: 0 0 10px 0;
+      width: 50%;
+    }
+    .why-detail-container{
+      margin: 10%;
+    }
+    .monthly{
+      color: white;
+      font-size: 1.2em;
+    }
+    .amount{
+      color: lightgrey;
+    }
+    .dollar-icon{
+      font-size: 2.6em;
+      color: white;
+    }
+    .detail{
+      color: white;
+    }
+    .signup-button{
+      background-color: hsl(71, 73%, 54%);
+      border: 1px solid hsl(71, 73%, 54%);
+      padding: 20px;
+      margin-top:5%;
+      text-align: center; 
+      border-radius: 4px;
+      width: 100%;
+    }
+    .button-container{
+      width: 100%;
+      margin: 0 auto;
+    }
+    .why{
+      color: white;
+      font-size: 1.3em;
+    }
+    .why-detail{
+      color: white;
+      font-size: 1.1em;
+    }
+    @media screen and (max-width: 620px) and (min-width: 461px){
+      .monthly{
+        color: white;
+        font-size: 0.9em;
+      }
+
+      .dollar-icon{
+        font-size: 2em;
+        color: white;
+      }
+    }
+    @media screen and (max-width: 460px) and (min-width: 376px){
+      .monthly{
+        font-size: 0.7em;
+      }
+
+      .dollar-icon{
+        font-size: 2em;
+        color: white;
+      }
+
+      .community-heading{
+        color: hsl(179, 62%, 43%);
+        font-size: 1.3em;
+      }
+    }
+    @media screen and (max-width: 375px){
+      .container{
+        width: 90%;
+        margin: 5% auto;
+        padding: 0;
+      }
+
+      .community-detail-container{
+        padding: 10%;
+      }
+
+      .subscription-why-container{
+        display: block;
+        width: 100%;
+      }
+
+      .subscription-container{
+        width: 100%;
+        border-radius: 0 ;
+      }
+
+      .why-container{
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+      }
+
+      .subscription-details{
+        margin: 0;
+        padding: 10%;
+      }
+
+      .why-detail-container{
+        margin: 0;
+        padding: 10%;
+      }
+
+      .community-heading{
+        font-size: 1.2em;
+      }
+      .offer-messsage{
+        font-size: 1.1em;
+      }
+      .detail-message{
+          font-weight: 600;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="community-detail-container">
+      <div class="community-heading"><h2>Join our community</h2></div>
+      <div class="offer-messsage"><p>30-day, hassle-free money back guarantee</p></div>
+      <div class="detail-message">
+        <p>Gain access to our full library of tutorials along with expert code reviews. 
+        Perfect for any developers who are serious about honing their skills.</p>
+      </div>
+    </div>
+    <div class="subscription-why-container">
+      <div class="subscription-container">
+        <div class="subscription-details">
+          <div class="monthly"><h3>Monthly Subscription</h3></div>
+          <div class="amount"><span class="dollar-icon">&dollar;29</span> per month</div>
+          <div class="detail">Full access for less than &dollar;1 a day</div>
+          <div class="button-container">
+            <button class="signup-button">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-container">
+        <div class="why-detail-container">
+          <div class="why">
+            <h3>Why Us</h3>
+          </div>
+          <div class="why-detail">
+            <p>
+              Tutorials by industry experts
+              Peer &amp; expert code review
+              Coding exercises
+              Access to our GitHub repos
+              Community forum
+              Flashcard decks
+              New videos every week
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>

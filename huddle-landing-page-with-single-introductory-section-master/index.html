@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{padding: 0; margin: 0; font-family: 'Open Sans', sans-serif;}
+    p{margin: 0;}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    #header-section{
+      background-image: url(./images/bg-desktop.svg);
+      background-color: hsl(257, 40%, 49%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+    }
+    .logo-container{
+      padding: 1%;
+    }
+    .image-description-container{
+      display: flex;
+    }
+
+    .heading-detail-container{
+      color: white;
+      width: 50%;
+    }
+
+    .heading-container{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 3em;
+      padding: 5% 6% 0 6%;
+    }
+    .heading-detail{
+      font-size: 1.5em;
+      padding: 5% 6%;
+    }
+    .image-container{
+      width: 50%;
+      margin: 2% 2% 0 2%;
+    }
+
+    .image-container img{
+      width: 100%;
+    }
+    .register-button{
+      padding:0 6%;
+    }
+
+    .register-button button{
+      padding: 15px;
+      width: 200px;
+      border-radius: 25px;
+      border: 1px solid white;
+      background-color: white;
+      color: hsl(257, 40%, 49%);
+      box-shadow: 1px 1px 5px black;
+    }
+
+    .register-button button:focus{
+      outline: none;
+    }
+
+    .social-icons{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      color: white;
+    }
+
+    .icon-border{
+      border: 2px solid white;
+      font-size: 1.3em;
+      border-radius: 50%;
+      padding: 10px;
+      margin-right: 18px;
+    }
+
+    .facebook-icon{
+      padding:0 4px;
+    }
+
+    .instagram-icon{
+      padding: 0 2px;
+    }
+
+    @media screen and (max-width: 1050px){
+
+      .heading-container{
+        font-size: 2.5em;
+        padding: 5% 6% 0 6%;
+      }
+      .heading-detail{
+        font-size: 1.3em;
+        padding: 5% 6%;
+      }
+
+      .image-container{
+        margin: 4%;
+      }
+
+      .social-icons{
+         margin-top: 5%;
+      }
+    }
+
+    @media screen and (max-width: 900px){
+      .image-container{
+        margin: 2%;
+      }
+
+      .heading-container{
+        font-size: 2em;
+        padding: 5% 6% 0 6%;
+      }
+
+      .heading-detail{
+        font-size: 1.1em;
+        padding: 5% 6%;
+      }
+    }
+
+    @media screen and (max-width: 700px){
+      .image-container{
+        margin: 5%;
+      }
+
+      .heading-container{
+        font-size: 1.5em;
+        padding: 5% 6% 0 6%;
+      }
+
+      .heading-detail{
+        font-size: 0.8em;
+        padding: 5% 6%;
+      }
+
+      .register-button button{
+        padding: 10px;
+        width: 130px;
+        font-size: 0.6em;
+      }
+
+      .social-icons{
+        justify-content: center;
+        margin: 10% auto;
+      }
+    }
+
+    @media screen and (max-width: 500px){
+      .image-description-container{
+        display: block;
+      }
+
+      .heading-detail-container{
+        width: 100%;
+      }
+
+      .heading-container{
+        font-size: 2em;
+        font-weight: 500;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .heading-detail{
+        font-size: 1em;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .image-container{
+        width: 90%;
+        margin: 5% auto;
+      }
+
+      .register-button{
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .register-button button{
+        padding: 10px;
+        width: 100%;
+        font-size: 1em;
+      }
+
+      .social-container{
+        margin-bottom: 2%;
+      }
+
+      .social-icons{
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .icon-border{
+        border: 2px solid white;
+        font-size: 1em;
+        border-radius: 50%;
+        padding: 6px;
+        margin-right: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .facebook-icon{
+        padding:0 4px;
+      }
+
+      .instagram-icon{
+        padding: 0 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header-section">
+    <div class="logo-container">
+      <img src="images/logo.svg">
+    </div>
+    <div class="image-description-container">
+      <div class="image-container">
+        <img src="images/illustration-mockups.svg">
+      </div>
+      <div class="heading-detail-container">
+        <div class="heading-container">
+          <p>Build The Community Your Fans Will Love</p>
+        </div>
+        <div class="heading-detail">
+          <p>
+            Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+            Create connections with your users as you engage in genuine discussion.
+          </p>
+        </div>
+        <div class="register-button">
+          <button>Register</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="social-icons">
+        <div class="icon-border">
+          <span class="icon-container"><i class="fa fa-facebook facebook-icon" ></i></span>
+        </div>
+        <div class="icon-border">
+          <span class="icon-container"><i class="fa fa-twitter"></i></span>
+        </div>
+        <div class="icon-border">
+          <span class="icon-container"><i class="fa fa-instagram instagram-icon"></i></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+</body>
+</html>

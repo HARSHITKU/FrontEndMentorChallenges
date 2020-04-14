@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <style>
+    body{
+      background-color: hsl(0, 100%, 74%);
+      background-image: url(./images/bg-intro-desktop.png);
+      font-family: 'Poppins', sans-serif;
+    }
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .quote-form-container{
+      margin: 4%;
+      display: flex;
+    }
+    .quote-container{
+      width: 50%;
+    }
+    .quote-message{
+      color: white;
+      font-size: 1.8em;
+      margin: 20% 5% 5%;
+    }
+
+    .quote-message h1{
+      text-align: center; 
+    }
+
+    .quote-detail{
+      margin:0 5%;
+      color: white;
+      font-size: 1em;
+    }
+    .quote-detail p{
+      padding-left: 10%;
+    }
+    .form-container{
+      width: 50%;
+    }
+    .freetrial-button{
+      border-radius: 6px;
+      padding: 3%;
+      text-align: center;
+      width: 76%;
+      color: white;
+      font-weight: 600;
+      background-color: hsl(248, 32%, 49%);
+      margin: 0 auto;
+      box-shadow:0 4px grey;
+    }
+    .form-outer-container{
+      width: 70%;
+      margin: 10% auto;
+      padding: 6%;
+      border-radius: 10px;
+      background-color: white;
+    }
+    .form-inner-container{
+      text-align: center;
+      width: 100%;
+    }
+    .then-text{
+      font-weight: 400;
+    }
+    input[type="text"], input[type="email"], input[type="password"]{
+      width: 95%;
+      height: 50px;
+      padding-left: 5%;
+      margin-bottom: 15px; 
+      border-radius: 6px; 
+      border: 1px solid lightgrey;
+    }
+    .submit-button{
+      width: 100%;
+      border-radius: 6px;
+      background-color: hsl(154, 59%, 51%);
+      height: 50px;
+      font-size: 1em;
+      font-weight: 600;
+      color: white;
+      margin: 10px 0;
+      border: 1px solid hsl(154, 59%, 51%);
+      text-transform: uppercase;
+      box-shadow:0 4px grey;
+    }
+    .submit-button:focus{
+      outline: none;
+    }
+    input:focus{
+      outline: none;
+    }
+
+    ::placeholder{
+      font-weight: 600; 
+    }
+    .agree-button{
+      font-size: 0.6em;
+      color: lightgrey;
+      font-weight: 600;
+    }
+    .terms-text{
+      color: hsl(0, 100%, 74%);
+    }
+
+    @media screen and (max-width: 975px){
+      .quote-message{
+        font-size: 1.3em;
+        margin: 36% 5% 5%;
+      }
+
+      .submit-button{
+        font-size: 0.8em;
+      }
+    }
+
+    @media screen and (max-width: 710px){
+      .quote-message{
+        font-size: 1.1em;
+        margin: 45% 5% 5%;
+      }
+      .quote-detail{
+        font-size: 0.8em;
+      }
+      .submit-button{
+        font-size: 0.6em;
+      }
+      .freetrial-button{
+        font-size: 0.8em;
+      }
+    }
+
+    @media screen and (max-width: 500px){
+      .quote-message{
+        font-size: 0.8em;
+        margin: 50% 5% 5%;
+      }
+    }
+
+    @media screen and (max-width: 375px){
+      .quote-form-container{
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+
+      .quote-container{
+        width: 100%;
+        margin: 0;
+      }
+
+      .quote-message{
+        font-size: 1em;
+        margin: 20% 0 0 0;
+      }
+
+      .quote-detail{
+        margin: 0 0 20% 5%;
+      }
+
+      .form-container{
+        width: 100%;
+      }
+    }
+
+    #fnameError, #lnameError, #emailError, #passwordError{
+      font-size: 0.7em;
+      color: red;
+      float: right;
+      font-style: italic;
+      position: relative;
+      top: -12px;
+    }
+    .error-icon{
+      display: none;
+      float: right;
+      position: relative;
+      top: -55px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-form-container">
+    <div class="quote-container">
+      <div class="quote-message"><h1>Learn to code by watching others</h1></div>
+      <div class="quote-detail">
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
+        </p>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="freetrial-button">
+        Try it free 7 days<span class="then-text"> then $20/mo. thereafter</span>
+      </div>
+      <div class="form-outer-container">
+        <div class="form-inner-container">
+          <form name="contact-form" onsubmit="return false" method="post">
+            <input type="text" name="fname" placeholder="First Name" id="fname">
+            <span class="error-icon" id="fnameIcon"><img src="images/icon-error.svg"></span>
+            <span id="fnameError"></span> 
+            <input type="text" name="lname" placeholder="Last Name" id="lname">
+            <span class="error-icon" id="lnameIcon"><img src="images/icon-error.svg"></span>
+            <span id="lnameError"></span>
+            <input type="email" name="email" placeholder="Email Address" id="emailA">
+            <span class="error-icon" id="emailIcon"><img src="images/icon-error.svg"></span>
+            <span id="emailError"></span>
+            <input type="password" name="password" placeholder="Password" id="passwordV">
+            <span class="error-icon" id="passwordIcon"><img src="images/icon-error.svg"></span>
+            <span id="passwordError" ></span>
+            <button class="submit-button" onclick="validateForm()"><span>Claim your free trial</span></button>
+          </form>
+          <div class="agree-button">By clicking the button, you are agreeing to our <span class="terms-text">Terms and Services</span></div>
+          <span id="thankyou-message"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+  <script type="text/javascript">
+    function validateForm(){
+        let fnameValue = document.getElementById("fname").value;
+        let lnameValue = document.getElementById("lname").value;
+        let emailValue = document.getElementById("emailA").value;
+        let passwordValue = document.getElementById('passwordV').value;
+        if(fnameValue === '' || fnameValue === null || fnameValue === undefined){
+          document.getElementById('fnameError').innerHTML = "First name cannot be empty";
+          document.getElementById('fnameIcon').style.display = "block";
+        }else{
+          document.getElementById('fnameError').innerHTML = "";
+          document.getElementById('fnameIcon').style.display = "none"; 
+        }
+        if(lnameValue === '' || lnameValue === null || lnameValue === undefined){
+          document.getElementById('lnameError').innerHTML = "Last name cannot be empty";
+          document.getElementById('lnameIcon').style.display = "block";
+        }else{
+          document.getElementById('lnameError').innerHTML = "";
+          document.getElementById('lnameIcon').style.display = "none";
+        }
+        if(emailValue === '' || emailValue === null || emailValue === undefined){
+          document.getElementById('emailError').innerHTML = "Looks like this is not an email";
+          document.getElementById('emailIcon').style.display = "block";
+        }else{
+          document.getElementById('emailError').innerHTML = "";
+          document.getElementById('emailIcon').style.display = "none";
+        }
+        if(passwordValue === '' || passwordValue === null || passwordValue === undefined){
+          document.getElementById('passwordError').innerHTML = "Password cannot be empty";
+          document.getElementById('passwordIcon').style.display = "block";
+        }else{
+          document.getElementById('passwordError').innerHTML = "";
+          document.getElementById('passwordIcon').style.display = "none";
+        }
+    }
+  </script>
+</body>
+</html>

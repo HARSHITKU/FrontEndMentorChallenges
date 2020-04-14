@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;}
+    p{margin: 0}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    #header-section{
+      background-image: url(./images/bg-hero-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: hsl(193, 100%, 96%);
+    }
+    .logo-button-container{
+      display: flex;   
+      padding: 4%;
+    }
+    .try-button{
+      width: 100%;
+      text-align: right;
+    }
+    .try-button button{
+      width: 170px;
+      padding: 10px 0;
+      font-size: 1.1em;
+      border-radius: 22px;
+      background-color: white;
+      border: 1px solid white;
+      align-self: flex-end;
+      box-shadow: 3px 3px 8px lightgrey;
+    }
+    .text-image-container{
+      display: flex;
+    }
+    .text-contianer{
+      width: 50%;
+    }
+    .detail-container{
+      padding: 8%;
+    }
+    .heading-detail{
+      padding: 10px 0;
+      font-size: 1.2em;
+    }
+    .image-container{
+      width: 50%;
+      margin-right: 25px;
+    }
+    .picture{
+      padding: 10px;
+    }
+    .picture img{
+      width: 100%;
+    }
+    .heading-container{
+      font-size: 3em;
+      font-family: 'Poppins', sans-serif;
+    }
+    .get-button{
+      font-size: 0.8em;
+      font-weight: 600;
+      width: 200px;
+      padding: 15px;
+      border-radius: 26px;
+      border: 1px solid hsl(322, 100%, 66%);
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+    }
+    .grow-together-container{
+      display: flex;
+      border-radius: 20px;
+      width: 90%;
+      height: 15%;
+      margin: 3% auto;
+      box-shadow: 1px 1px 20px lightgrey;
+    }
+    .grow-together{
+      width: 50%;
+      margin: 4%;
+    }
+    .grow-heading{
+      font-size: 2em;
+      margin: 20% 0 5% 5%;
+      font-family: 'Poppins', sans-serif;
+      color: hsl(192, 100%, 9%);
+    }
+    .grow-detail{
+      margin: 5%;
+      color: grey;
+    }
+
+    .part-two{
+      display: none;
+    }
+    .grow-image-container{
+      width: 50%;
+      margin: 4%;
+    }
+    .grow-image-container img{
+      width: 100%;
+    }
+    .ready-community-container{
+      box-shadow: 1px 1px 4px lightgrey;
+      border: 1px solid white;
+      width: 60%;
+      border-radius: 10px;
+      margin: -125px auto 0 auto;
+      text-align: center;
+      background-color: white;
+      position: relative;
+      top: 140px;
+    }
+    .ready-container{
+      font-size: 2em;
+      font-weight: 600;
+      margin: 5%;
+    }
+    .button-container-two{
+      margin: 5%;
+    }
+    .get-button-two{
+      font-size: 1em;
+      font-weight: 600;
+      width: 60%;
+      padding: 25px;
+      border-radius: 35px;
+      border: 1px solid hsl(322, 100%, 66%);
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+    }
+    .footer-section{
+      background-color: hsl(192, 100%, 9%);
+    }
+    .footer-description-wrapper{
+      padding: 10%;
+      margin-top: 4%;
+    }
+    .footer-details-container{
+      display: flex;
+      color: white; 
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .address-phone-mail-container{
+      width: 35%;
+    }
+    .address-container, .email-container, .phone-container{
+      width: 70%;
+      display: flex;
+      margin: 5% auto;
+    }
+
+    .text-data{
+      margin-left: 7%;: 
+    }
+
+    .about-container{
+      width: 25%;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .contactus-container{
+      width: 25%;
+      line-height: 30px;
+      text-align: center;
+    }
+    
+    .social-icons{
+      display: flex;
+    }
+
+    .icon-border{
+      border: 1px solid;
+    }
+
+    .social-container{
+      width: 25%;
+      text-align: center;
+    }
+
+    .icon-border{
+      border-radius: 50%;
+      padding: 10px;
+      margin: 0 auto;
+    }
+
+    .facebook-icon{
+      padding: 3px;
+    }
+
+    .copy-container{
+      margin-top: 48%;
+    }
+
+    button:focus{
+      outline: none;
+    }
+
+    @media screen and (max-width: 1100px){
+      .heading-container{
+        font-size: 2em;
+      }
+
+      .heading-detail{
+        font-size: 0.8em;
+      }
+
+      .grow-heading{
+        font-size: 1.4em;
+      }
+
+      .grow-detail{
+        font-size: 0.8em;
+      }
+
+      .ready-community-container{
+        margin: -84px auto 0 auto;
+        top: 90px;
+      }
+
+      .ready-container{
+        font-size: 1.5em;
+        margin: 5%;
+      }
+
+      .get-button-two{
+        font-size: 0.8em;
+        width: 50%;
+        padding: 18px;
+      }
+
+      .footer-description-wrapper{
+        padding: 8%;
+        font-size: 0.6em;
+        margin-top: 5%;
+      }
+
+      .footer-details-container{
+        display: flex;
+        color: white; 
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .icon-border{
+        border-radius: 50%;
+        padding: 8px;
+        margin: 0 auto;
+      }
+    }
+
+    @media screen and (max-width: 750px){
+      .heading-container{
+        font-size: 1.5em;
+      }
+
+      .heading-detail{
+        font-size: 0.8em;
+      }
+
+      .grow-heading{
+        font-size: 1.2em;
+        margin: 14% 0 5% 5%;
+      }
+
+      .grow-detail{
+        font-size: 0.8em;
+      }
+
+      .ready-community-container{
+        margin: -68px auto 0 auto;
+        top: 75px;
+      }
+
+      .icon-border{
+        border-radius: 50%;
+        padding: 4px;
+        margin: 0 auto;
+      }
+    }
+
+    @media screen and (max-width: 670px){
+      .heading-container{
+        font-size: 1.2em;
+      }
+
+      .heading-detail{
+        font-size: 0.8em;
+      }
+
+      .get-button{
+        font-size: 0.6em;
+        width: 150px;
+      }
+
+      .ready-container{
+        font-size: 1.2em;
+        margin: 5%;
+      }
+
+      .get-button-two{
+        font-size: 0.6em;
+        width: 50%;
+        padding: 16px;
+      }
+
+      .footer-description-wrapper{
+        font-size: 0.6em;
+        margin-top: 5%;
+        padding: 10%;
+      }
+
+      .footer-details-container{ 
+        width: 100%;
+      }
+
+    }
+
+    @media screen and (max-width: 500px){
+      .heading-container{
+        font-size: 1em;
+      }
+
+      .heading-detail{
+        font-size: 0.6em;
+      }
+
+      .grow-heading{
+        font-size: 0.8em;
+        margin: 12% 0 5% 5%;
+      }
+
+      .grow-detail{
+        font-size: 0.6em;
+      }
+
+      .logo img{
+        width: 85%;
+        margin-top: 6%;
+      }
+
+      .try-button button{
+        width: 110px;
+        font-size: 0.7em;
+      }
+
+      .ready-container{
+        font-size: 1em;
+        margin: 5%;
+      }
+
+      .get-button-two{
+        font-size: 0.6em;
+        width: 130px;
+        padding: 14px;
+      }
+
+      .footer-description-wrapper{
+        margin-top: 12%;
+      }
+    }
+
+    @media screen and (max-width: 375px){
+      .text-image-container{
+        display: block;
+      }
+
+      .text-contianer{
+        width: 100%;
+      }
+
+      .image-container{
+        width: 100%;
+      }
+
+      .heading-container{
+        font-size: 1.6em;
+        text-align: center;
+      }
+
+      .heading-detail{
+        font-size: 1em;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .get-button{
+        font-size: 1em;
+        width: 100%;
+      }
+
+      .grow-together-container{
+        display: block;
+        border-radius: 20px;
+        width: 100%;
+        height: 15%;
+        margin: 3% auto;
+        box-shadow: 1px 1px 20px lightgrey;
+      }
+
+      .grow-together{
+        width: 100%;
+        margin: 0;
+      }
+
+      .grow-image-container{
+        width: 80%;
+        margin: 0 auto;
+        padding: 5%;
+      }
+
+      .ready-community-container{
+        width: 90%;
+      }
+
+      .grow-heading{
+        font-size: 1.4em;
+        text-align: center;
+        margin: 0;
+        padding: 5%;
+      }
+
+      .grow-detail{
+        font-size: 0.8em;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;  
+      }
+
+      .part-one{
+        display: none;
+      }
+
+      .part-two{
+        display: block;
+      }
+
+      .container-one, .container-three, .container-two{
+        margin: 4%;
+      }
+
+      .footer-description-wrapper{
+        margin-top: 16%;
+      }
+
+      .footer-details-container{
+        display: block;
+      }
+
+      .address-phone-mail-container{
+        width: 100%;
+      }
+
+      .address-container, .email-container, .phone-container{
+        width: 100%;
+        display: flex;
+        margin: 5% auto;
+      }
+
+      .about-container, .contactus-container{
+        width: 100%;
+        line-height: 30px;
+        text-align: left;
+      }
+
+      .social-container{
+        width: 100%;
+      }
+
+      .copy-container{
+        margin-top: 5%;
+      }
+
+      .icon-border{
+        margin: 2%;
+      }
+
+      .social-icons{
+        justify-content: center;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header id="header-section">
+    <div class="logo-button-container">
+      <div class="logo"><img src="images/logo.svg"></div>
+      <div class="try-button"><button>Try It Free</button></div>
+    </div>
+
+    <div class="text-image-container">
+      <div class="text-contianer">
+        <div class="detail-container">
+          <div class="heading-container">
+            <p>Build The Community Your Fans Will Love</p>
+          </div>
+          <div class="heading-detail">
+            <p>
+              Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+              Create connections with your users as you engage in genuine discussion.
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="get-button">Get Started For Free</button>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="picture">
+          <img src="images/illustration-mockups.svg">
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <section class="container-one">
+      <div class="grow-together-container">
+        <div class="grow-together part-one">
+          <div class="grow-heading"><p>Grow Together</p></div>
+          <div class="grow-detail">
+            <p>
+              Generate meaningful discussions with your audience and build a strong, loyal community. 
+              Think of the insightful conversations you miss out on with a feedback form.
+            </p>
+          </div>
+        </div>
+        <div class="grow-image-container">
+          <img src="images/illustration-grow-together.svg">
+        </div>
+
+        <div class="grow-together part-two">
+          <div class="grow-heading"><p>Grow Together</p></div>
+          <div class="grow-detail">
+            <p>
+              Generate meaningful discussions with your audience and build a strong, loyal community. 
+              Think of the insightful conversations you miss out on with a feedback form.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-two">
+      <div class="grow-together-container">
+
+        <div class="grow-image-container">
+          <img src="images/illustration-flowing-conversation.svg">
+        </div>
+
+        <div class="grow-together">
+          <div class="grow-heading"><p>Flowing Conversations</p></div>
+          <div class="grow-detail">
+            <p>
+              You wouldn't paginate a conversation in real life, so why do it online? Our threads 
+              have just-in-time loading for a more natural flow.
+            </p></div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="container-three">
+      <div class="grow-together-container">
+        <div class="grow-together part-one">
+          <div class="grow-heading"><p>Your Users</p></div>
+          <div class="grow-detail">
+            <p>
+              It takes no time at all to integrate Huddle with your app's authentication solution. 
+              This means, once signed in to your app, your users can start chatting immediately.
+            </p>
+          </div>
+        </div>
+        <div class="grow-image-container">
+          <img src="images/illustration-your-users.svg">
+        </div>
+        <div class="grow-together part-two">
+          <div class="grow-heading"><p>Your Users</p></div>
+          <div class="grow-detail">
+            <p>
+              It takes no time at all to integrate Huddle with your app's authentication solution. 
+              This means, once signed in to your app, your users can start chatting immediately.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="ready-community-container">
+        <div class="ready-container">
+          <p>Ready To Build Your Community?</p>
+        </div>
+        <div>
+          <div class="button-container-two">
+            <button class="get-button-two">Get Started For Free</button>
+          </div>
+        </div>
+      </div>
+
+    <footer class="footer-section">
+      <div class="footer-description-wrapper">
+        <div class="footer-details-container">
+          <div class="address-phone-mail-container">
+            <div class="address-container">
+              <div>
+                <img src="images/icon-location.svg">
+              </div>
+              <div class="text-data">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                  incididunt ut labore et dolore magna aliqua
+                
+              </div>
+            </div>
+            <div class="phone-container">
+               <div>
+                <img src="images/icon-phone.svg">
+              </div>
+              <div class="text-data">
+                
+                +1-543-123-4567
+              
+              </div>
+            </div>
+            <div class="email-container">
+               <div>
+                <img src="images/icon-email.svg">
+              </div>
+              <div class="text-data">
+                
+                example@huddle.com
+                
+              </div>
+            </div>
+          </div> 
+          <div class="about-container">
+            <div class="aboutus-container">
+              <p>About Us</p>
+            </div>
+            <div class="what-we-do-container">
+              <p>What We Do</p>
+            </div>
+            <div class="faq-container">
+              <p>FAQ</p>
+            </div>
+          </div>
+          <div class="contactus-container">
+            <div class="career-container">
+              <p>Career</p>
+            </div>
+            <div blog-container>
+              <p>Blog</p>
+            </div>
+            <div class="contact-container">
+              <p>Contact Us</p>
+            </div>
+          </div>
+          <div class="social-container">
+            <div class="social-icons">
+              <div class="icon-border">
+                <span class="icon-container"><i class="fa fa-facebook facebook-icon" ></i></span>
+              </div>
+              <div class="icon-border">
+                <span class="icon-container"><i class="fa fa-twitter"></i></span>
+              </div>
+              <div class="icon-border">
+                 <span class="icon-container"><i class="fa fa-instagram"></i></span>
+              </div>
+            </div>
+            <div class="copy-container">
+                &copy; Copyright 2018 Huddle. All rights reserved.
+              </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+</body>
+</html>

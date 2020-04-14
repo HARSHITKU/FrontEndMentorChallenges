@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <style>
+    body{
+      font-family: 'Josefin Sans', sans-serif;
+      padding: 0;
+      margin: 0; 
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .coming-soon-page-container{
+      display: flex;
+      margin: 4%;
+      box-shadow:1px 1px 20px lightgrey;
+    }
+    .details-form-container{
+      width: 50%;
+      padding:0 10%;
+      background-image: url(./images/bg-pattern-desktop.svg);
+      background-size: cover;
+      background-position: center;
+    }
+    .image-container{
+      width: 40%;
+    }
+    .main-heading{
+      margin-top: 15%;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      font-size: 4em;
+      font-weight: 300;
+      color: hsl(0, 36%, 70%);
+    }
+    .sub-heading{
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      font-size: 4em;
+    }
+    .detail-message-container{
+      margin-top: 3%;
+      width: 70%;
+      color: hsl(0, 36%, 70%);
+    }
+    .details-container{
+      margin: 5%;
+    }
+    .logo-container{
+      margin-top: 5%;
+    }
+    .hero-image{
+      width: 100%;
+      height: 100%;
+    }
+    .arrow-icon{
+      padding-top: 0.5em;
+    }
+    input[type="email"]{
+      border-radius: 20px 0 0 20px;
+      width: 160px;
+      padding: 16px 40px 10px 40px;
+      border: 1px solid hsl(0, 36%, 70%); 
+    }
+    .arrow-button{
+      padding: 2px 10px 10px 10px;
+      border-radius: 22px ;
+      width: 70px;
+      margin-left: -6%;
+      border: 1px solid hsl(0, 93%, 68%); 
+      background-color: hsl(0, 93%, 68%); 
+    }
+    .form-container{
+      margin-top: 8%;
+    }
+    ::placeholder{
+      color: hsl(0, 36%, 70%);
+    }
+    input:focus, button:focus{
+      outline: none;
+    }
+    #error{
+      color: red;
+      margin-top: 2%;
+      width: 280px;
+      text-align: center;
+    }
+    .error-icon{
+      position: relative;
+      top: 30px;
+      left: 185px;
+      display: none;
+      width: 3%;
+    }
+    .image-mobile-container{
+      display: none;
+    }
+
+    @media screen and (max-width: 950px){
+      input[type="email"]{
+        width: 110px;
+      }
+
+      #error{
+        width: 250px;
+      }
+      .error-icon{
+        left: 140px;
+      }
+      .arrow-button{
+        width: 60px;
+        margin-left: -8%;
+      }
+    }
+
+    @media screen and (max-width: 700px){
+      .main-heading, .sub-heading{
+        letter-spacing: 5px;
+        font-size: 3em;
+      }
+      input[type="email"]{
+        width: 80px;
+      }
+
+      #error{
+        width: 210px;
+        font-size: 0.8em;
+      }
+      .error-icon{
+        left: 110px;
+      }
+      .arrow-button{
+        width: 60px;
+        margin-left: -13%;
+      }
+      .detail-message-container{
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 500px) and (min-width: 376px){
+      .main-heading, .sub-heading{
+        letter-spacing: 3px;
+        font-size: 2em;
+      }
+
+      input[type="email"]{
+        width: 60%;
+        border-radius: 20px;
+      }
+
+      .arrow-button{
+        width: 50%;
+        margin: 3px 30%;
+      }
+
+      .error-icon{
+        top: 30px;
+        left: 140px;
+        width: 10%;
+      }
+
+      #error{
+        width: 160px;
+        font-size: 0.6em;
+      }
+    }
+
+    @media screen and (max-width: 375px){
+        .image-container{
+          display: none;
+        }
+        .image-mobile-container{
+          display: block;
+          width: 100%;
+        }
+        .image-mobile-container img{
+          width: 100%;
+        }
+        .logo-container{
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+        .logo-container img{
+          width: 110px;
+          padding: 10%;
+        }
+        .coming-soon-page-container{
+          display: block;
+          margin: 0;
+        }
+        .details-form-container{
+          width: 100%;
+          height: 100%;
+          padding:0;
+        }
+        .details-container{
+          margin: 1%;
+        }
+        .detail-message-container{
+          width: 80%;
+          margin: 0 auto;
+        }
+        .main-heading, .sub-heading{
+          text-align: center;
+          letter-spacing: 4px;
+          font-size: 3em;
+        }
+        input[type="email"]{
+          width: 50%;
+          margin: 6%;
+        }
+        .error-icon{
+          top: 52px;
+          left: 66%;
+          width: 5%;
+        }
+        #error{
+          width: 100%;
+          text-align: center;
+          font-size: 1em;
+          margin-top: -10px;
+        }
+    }
+    @media screen and (max-width: 300px){
+        input[type="email"]{
+          width: 30%;
+          margin: 4%;
+        }
+
+        .error-icon{
+          top: 40px;
+          left: 55%;
+          width: 5%;
+        }
+    }
+</style>
+</head>
+<body>
+  <div class="coming-soon-page-container">
+    <div class="details-form-container">
+      <div class="details-container">
+        <div>
+          <div class="logo-container"><img src="images/logo.svg"></div>
+          <div class="image-mobile-container"><img src="images/hero-mobile.jpg"></div>
+          <div class="main-heading"></h1>we're</h1></div>
+          <div class="sub-heading"></h1>coming</h1></div>
+          <div class="sub-heading"></h1 >Soon</h1></div>
+          <div class="detail-message-container">
+            <p>
+              Hello fellow shoppers! We're currently building our new fashion store. 
+              Add your email below to stay up-to-date with announcements and our launch deals.
+            </p>
+          </div>
+          <div class="form-container">
+            <img src="images/icon-error.svg" class="error-icon" id="errorId">
+            <input type="email" name="email" placeholder="Email Address" id="input-box">
+            <button class="arrow-button" onclick="formValidation()"><img src="images/icon-arrow.svg" class="arrow-icon"></button>
+            <div id="error"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="images/hero-desktop.jpg" class="hero-image">
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshit Kumar</a>.
+    </p>
+  </footer>
+
+  <script type="text/javascript">
+    function formValidation(){
+      var formValue = document.getElementById('input-box').value;
+      var regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(formValue == ''){
+        document.getElementById('error').innerHTML = "Please provide a valid email";
+        document.getElementById('errorId').style.display = "block";
+      }
+      if(!regEx.test(formValue)){
+        document.getElementById('error').innerHTML = "Please provide a valid email";
+        document.getElementById('errorId').style.display = "block";
+      }else{
+        document.getElementById('error').innerHTML = "Thankyou for Subscribing";
+        document.getElementById('errorId').style.display = "none";
+      }
+    }
+
+    function formValidation1(){
+      var formValue = document.getElementById('input-box1').value;
+      var regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(formValue == ''){
+        document.getElementById('error1').innerHTML = "Please provide a valid email";
+        document.getElementById('errorId1').style.display = "block";
+      }
+      if(!regEx.test(formValue)){
+        document.getElementById('error1').innerHTML = "Please provide a valid email";
+        document.getElementById('errorId1').style.display = "block";
+      }else{
+        document.getElementById('error1').innerHTML = "Thankyou for Subscribing";
+        document.getElementById('errorId1').style.display = "none";
+      }
+    }
+
+    // $('input').focus(function(){
+    //   $('#error').toggle();
+    //   $('#errorId').toggle();
+    // })
+  </script>
+</body>
+</html>
